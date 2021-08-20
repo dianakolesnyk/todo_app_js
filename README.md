@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](images/My_Full_Screen.JPG)
-![](images/Mobile_Screen.JPG)
+![](https://github.com/dianakolesnyk/todo_app_js/blob/main/images/Mobile_Screen.JPG)
+![](https://github.com/dianakolesnyk/todo_app_js/blob/main/images/My_Full_Screen.JPG)
 
 
 ### Links
@@ -206,5 +206,5 @@ Diana Kolesnyk
 
 - Frontend Mentor - [@dianakolesnyk](https://www.frontendmentor.io/profile/dianakolesnyk)
 
-#   t o _ d o _ a p p _ j s  
- 
+# to_do_app_js
+
