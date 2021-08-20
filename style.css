@@ -1,0 +1,174 @@
+
+
+ /*Light Theme colors*/
+[data-theme="light"]{
+    --bg-color:hsl(0, 0%, 98%);
+    --bg-image:url('images/bg-desktop-light.jpg');
+    --todo-container-bg-color:hsl(240, 100%, 100%);
+    --header-color:hsl(233, 11%, 84%);
+    --filter-selected: hsl(220, 98%, 61%);
+    --border-color:hsl(0, 0%, 77%);
+    --tasks-finished:hsl(236, 9%, 61%);
+    --filter-hover:hsl(235, 19%, 35%);
+    --filter-txt:hsl(234, 11%, 52%);
+    --txt-color:hsl(235, 24%, 19%);
+    --check-background:linear-gradient(to right, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+   
+}
+
+/*Dark Theme color*/
+[data-theme="dark"]{
+    --bg-color:hsl(235, 21%, 11%);
+    --bg-image:url('images/bg-desktop-dark.jpg');
+    --todo-container-bg-color:hsl(235, 24%, 19%);
+    --header-color:white;
+    --txt-color:hsl(240, 43%, 83%);
+    --filter-hover:hsl(236, 33%, 92%);
+    --filter-selected: hsl(220, 98%, 61%);
+    --filter-txt:hsl(234, 11%, 52%);
+    --border-color:hsl(234, 11%, 52%);;
+    --tasks-finished:hsl(233, 14%, 35%);
+    --check-background:linear-gradient(to right, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+
+
+}
+
+body{ 
+    background:var(--bg-color)  ; font-family:"Josefin Sans";
+    background-image: var(--bg-image);
+    background-size: 160rem; 
+    background-repeat: no-repeat; 
+    }
+    
+
+header{ 
+    display: flex; 
+    justify-content: space-between;
+    margin: 70px auto 50px;
+    color:var(--header-color);
+        
+}
+.box{width:600px;}
+
+h1{letter-spacing: 15px;text-transform: uppercase;color:white}
+
+#theme-switcher img{display:none;} 
+#theme-switcher img:hover{transform:rotate(19deg)}
+#theme-switcher img.active{display:block;}
+#to-do-input{margin:20px auto 30px;} /* top right bottom*/ 
+
+input{
+    border-radius: 5px;
+    width:100%;
+    height: 60px;
+    border:none;
+    outline:none;
+    font-size:18px;
+    padding-left:30px;
+    background-color: var(--todo-container-bg-color);
+    color:var(--txt-color);
+}
+input::placeholder{color:var(--border-color);}
+
+#to-do-tasks{
+    margin:0 auto;
+    background-color: var(--todo-container-bg-color);
+    color:var(--txt-color);
+    border-radius:  5px 5px 0px 0px;
+}
+#filter{
+    background-color: var(--todo-container-bg-color);
+    margin:0 auto; 
+    display: flex;
+    justify-content: space-between; 
+    border-radius: 0 0 5px 5px; 
+}
+
+#filter,#to-do-tasks{padding:18px;}
+#filter .button{color: var(--filter-txt);}
+#items-left{color: var(--tasks-finished);}
+#filtration span.selected{color:var(--filter-selected)}
+#filter .button:hover{color:var(--filter-hover)}
+#to-do-tasks >span:first-of-type{padding-top:0}
+#to-do-tasks >span{
+    display: table; /**/ 
+    width:100%;
+    margin:0 auto;
+    padding:15px;
+    border-bottom:1px var(--border-color) solid;
+}
+#filter .button,
+.check-box,
+.delete,
+#theme-switcher img{cursor: pointer;}
+
+
+.delete{
+    float: right;
+    height:20px;
+    width:50px;
+    transform:translateX(13px) ;
+    background: url(images/icon-cross.svg) center no-repeat;
+}
+.check-box{
+    border-radius: 50%;
+    width:15px;
+    height: 15px;
+    border:hsl(280, 87%, 65%) 1px solid ;
+    display: inline-block;
+    margin-right:15px;
+}
+
+.check-box:hover{
+    border-color: var(--check-background);
+}
+
+.check-box.ischecked{
+    background-image: var(--check-background);
+    position: relative;
+    border: none;
+}
+.check-box.ischecked::after{
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-image: var(--check-background);
+    background: url(images/icon-check.svg) no-repeat center;
+}
+.selected{color:var(--filter-selected)}
+.task-finished{text-decoration: line-through;color:var(--tasks-finished);} /* tarefa terminada fica riscada*/ 
+
+.empty{border: red 2px solid;border-radius: 10px;}
+
+.exist-error{
+    width: 600px;
+    height: 50px;
+    border-radius: 10px;
+    margin:0 auto 20px;
+    padding:15px;
+    display: none;
+    background-color:red ;
+    color:white;
+    font-size: 20px;
+}  
+
+@media (max-width:769px){
+    .box{width:90%;}
+    #filter{font-size:11px;}
+    body{background-position: top;}
+    .box{margin-top: 10x;}
+ 
+}
+
+a:visited{color: white;}
+
+#footer {
+            margin-top: 10px;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%; 
+            height: 40px;
+            color: white;
+            text-align: center;    
+        }

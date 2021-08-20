@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Local -->
+  <link rel=stylesheet href="style.css" />
+
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+
+<body>
+
+  <header class="box">
+    <h1><b> Todo</b></h1>
+    <div id="theme-switcher">
+      <img class="active" src="images/icon-sun.svg" alt="" />
+      <img src="images/icon-moon.svg" />
+    </div>
+  </header>
+
+  <div class="box" id="to-do-input">
+    <input type="text" placeholder="Create a new to do" />
+  </div>
+
+  <div id="error" class="exist-error box"></div>
+
+  <!-- lista de tarefas: será criada com JS -->
+  <div class="box" id="to-do-tasks"></div>
+
+  <!--Toda a coluna de baixo-->
+  <div class="box" id="filter">
+    <!-- As tarefas num  -->
+    <div id="items-left">
+      <!-- num (contador) de tarefas -->
+      <span id="items-left-num">0</span> items left
+    </div>
+    <div id="filtration">
+      <span class="button selected" id="all-tasks">All</span>
+      <span class="button" id="tasks-active">Active</span>
+      <span class="button" id="tasks-completed">Completed</span>
+    </div>
+    <span class="button" id="clear-completed">Clear Completed</span>
+  </div>
+
+  <div id="footer">
+    <a href="https://github.com/dianakolesnyk" target="_blank">Diana Kolesnyk</a> - <a
+      href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank">Front-end Mentor Challenge</a>
+  </div>
+
+
+  <!-- JS Local-->
+  <script src="main.js"></script>
+
+  <!-- JS Bootstrap-->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+    crossorigin="anonymous"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
