@@ -37,7 +37,7 @@ Users should be able to:
 ### Screenshot
 
 ![](https://github.com/dianakolesnyk/todo_app_js/blob/main/images/Mobile_Screen.JPG)
-![](images/Mobile_Screen.JPG)
+![](https://github.com/dianakolesnyk/todo_app_js/blob/main/images/My_Full_Screen.JPG)
 
 
 ### Links
