@@ -10,9 +10,7 @@ switcher[1].onclick = ()=>{
     switcher[0].classList.add("active"); 
     switcher[1].classList.remove("active");
 
-}
-
-      
+}     
 
 //constantes da TODO list
 const inputTask = document.querySelector("#to-do-input input"), 
@@ -56,9 +54,7 @@ inputTask.onkeyup = (e) => {
                     return;
                 }
             }
-            //will create the task
             errorExist.style.display = "none"; 
-       //  inputTask.classList.remove("empty");
             allTasks.appendChild(task); 
             task.appendChild(taskChecker); 
             task.appendChild(taskText);
@@ -73,9 +69,9 @@ inputTask.onkeyup = (e) => {
  }
 
 
-//Remove Task and check if it it completed
-document.addEventListener("click",(o) => {
-    
+//Remove the Task and check if it it completed
+document.addEventListener("click",(o) => {  
+
     if(o.target.classList.contains("delete")){ 
         o.target.parentElement.remove(); // vai eliminar o span principal
 
@@ -91,20 +87,17 @@ document.addEventListener("click",(o) => {
     //check
     if(o.target.classList.contains("check-box")){
 
-        if(o.target.classList.contains("ischecked")){ // se a mesma estiver checked
-            o.target.classList.remove("ischecked"); // apagamos o checked
-     //       o.target.parentElement.classList.remove("task-finished") // e fica sem a class task finished
-            itemsLeft++; // adicionamos ao contador
+        if(o.target.classList.contains("ischecked")){
+            o.target.classList.remove("ischecked"); 
+            itemsLeft++; 
             itemsLeftDom.textContent = itemsLeft;
-          
-            //errorExist.style.display = "none";
+            errorExist.style.display = "none";
         }
-        else{ // senao 
-            o.target.classList.add("ischecked"); // se n estiver checked atribuimos lhe uma class checked
-           // o.target.parentElement.classList.add("task-finished"); // atribuimos ao span principal uma class tag finished
-            itemsLeft--; // diminuimos o contador
-            itemsLeftDom.textContent = itemsLeft; // atualiza o num de tarefas
-           // errorExist.style.display = "none";
+        else{ 
+            o.target.classList.add("ischecked");
+            itemsLeft--;
+            itemsLeftDom.textContent = itemsLeft; 
+            errorExist.style.display = "none";
         } 
     }
 });
@@ -119,14 +112,14 @@ btnAllTasks.onclick = () => {
         allTasksList[i].style.display = "block"; 
     }
 }
-activeBtn.onclick = ()=>{ // btn ativo
-    removeSelected(); // vai apagar todas as atribuiçoes anteriores
-   activeBtn.classList.add("selected"); // o activeBtn fica com a class selected atribuida para depois mudar a cor para o azul
+activeBtn.onclick = ()=>{
+    removeSelected();
+   activeBtn.classList.add("selected");
     for(let i=0;i<allTasksList.length;i++){
-        if(allTasksList[i].childNodes[0].classList.contains("ischecked")){ // se a check box tiver uma class ischecked,
-            allTasksList[i].style.display = "none"; // nao ira aparecer
+        if(allTasksList[i].childNodes[0].classList.contains("ischecked")){ 
+            allTasksList[i].style.display = "none"; 
         }else{
-             allTasksList[i].style.display = "block"; // caso contrario, aparecerá
+             allTasksList[i].style.display = "block";
         }           
     }  
 }
@@ -147,11 +140,9 @@ clearBtn.onclick = () => {
         }
     }
 }
-removeSelected = ()=>{ // esta funcao foi criada para eliminar td
+removeSelected = ()=>{ // esta funcao foi criada para eliminar as classes selected, para eviar mais que um filtro selecionado
     clearBtn.classList.remove("selected");
     completedBtn.classList.remove("selected");
     activeBtn.classList.remove("selected");
     btnAllTasks.classList.remove("selected");
-    inputTask.classList.remove("empty");
-
 }
